@@ -15,5 +15,5 @@ app.use(function(req, res, next){
 app.use(express.static('public'));
 
 app.listen(PORT, function () {
-  console.log('Express server kjører nå på port ' + PORT);
+  console.log('Express server kjører nå paa port ' + PORT);
 });
