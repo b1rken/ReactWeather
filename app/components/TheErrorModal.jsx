@@ -5,7 +5,7 @@ var TheErrorModal = React.createClass({
 
   getDefaultProps: function () {
     return {
-      title: 'Error'
+      title: 'Ops, noe gikk galt!'
     };
   },
   propTypes: {
