@@ -9,14 +9,17 @@ module.exports = {
     var requestUrl = `${OPEN_WEATHER_MAP_URL}&q=${encodedLocation}`;
 
     return axios.get(requestUrl).then(function(res) {
+      console.log('hi', res);
       if (res.data.cod && res.data.message) {
-        throw new Error(res.data.message);
-      } else {
         console.log(res);
+        throw new Error('Kunne ikke finne byen du søkte etter.');
+      } else {
         return res.data.main.temp;
       }
-    }, function(res){
-      throw new Error(res.data.message);
+    }, function(err){
+      console.log(err.response.data.message);
+
+      throw new Error('Kunne ikke finne byen du søkte etter.');
     });
   }
 }
